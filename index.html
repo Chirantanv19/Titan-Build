@@ -19,8 +19,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Syncopate', sans-serif;
-            /* For headers */
             font-family: 'Inter', -apple-system, sans-serif;
         }
 
@@ -45,9 +43,8 @@
         .video-bg-container video {
             min-width: 100%;
             min-height: 100%;
-            background: transparent;
             width: 100%;
-            height: auto;
+            height: 100%;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -66,29 +63,36 @@
         /* ---------- MODERN NAV ---------- */
         nav {
             position: fixed;
-            top: 45px;
+            top: 30px;
             left: 50%;
             transform: translateX(-50%);
             width: 90%;
-            max-width: 1900px;
-            height: 70px;
+            max-width: 1400px;
+            height: 80px;
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border);
-            border-radius: 40px;
+            border-radius: 100px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 30px;
+            padding: 0 40px;
             z-index: 1000;
         }
 
-        /* .logo {
-            width: 5px;
-            height: 5px;
-        } */
+        /* LOGO HANDLING */
+        .logo-box {
+            display: flex;
+            align-items: center;
+        }
 
+        .logo-box img {
+            height: 50px;
+            /* Controlled height for desktop */
+            width: auto;
+            object-fit: contain;
+        }
 
         .nav-links a {
             color: #fff;
@@ -108,12 +112,18 @@
         .join-btn {
             background: var(--primary);
             color: #000;
-            padding: 10px 20px;
-            border-radius: 25px;
+            padding: 12px 24px;
+            border-radius: 50px;
             font-size: 0.75rem;
             font-weight: 800;
             text-decoration: none;
             text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .join-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(238, 124, 42, 0.4);
         }
 
         /* ---------- SECTIONS ---------- */
@@ -131,7 +141,7 @@
         }
 
         h1 {
-            font-size: clamp(3.5rem, 12vw, 8rem);
+            font-size: clamp(3rem, 10vw, 7rem);
             font-weight: 900;
             text-transform: uppercase;
             line-height: 0.9;
@@ -164,7 +174,7 @@
             height: 100%;
             object-fit: cover;
             transition: 0.6s transform;
-            opacity: 0.7;
+            opacity: 0.6;
         }
 
         .machine-card:hover img {
@@ -177,22 +187,23 @@
             bottom: 0;
             left: 0;
             padding: 20px;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
             width: 100%;
         }
 
         /* ---------- AMENITIES ---------- */
         .amenity-list {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             margin-top: 40px;
         }
 
         .amenity-item {
-            padding: 30px;
-            border-left: 3px solid var(--primary);
+            padding: 40px;
+            border-left: 4px solid var(--primary);
             background: var(--glass);
+            border-radius: 0 20px 20px 0;
         }
 
         /* ---------- MAP ---------- */
@@ -214,13 +225,42 @@
             background: #000;
         }
 
+        /* ---------- MOBILE RESPONSIVENESS ---------- */
         @media (max-width: 768px) {
-            .amenity-list {
-                grid-template-columns: 1fr;
+            nav {
+                top: 15px;
+                height: 65px;
+                padding: 0 20px;
+                width: 95%;
+            }
+
+            .logo-box img {
+                height: 35px;
+                /* Shorter logo for phone */
             }
 
             .nav-links {
                 display: none;
+                /* Hide links on mobile for space */
+            }
+
+            .join-btn {
+                padding: 10px 18px;
+                font-size: 0.65rem;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
             }
         }
     </style>
@@ -236,13 +276,10 @@
     </div>
 
     <nav>
-        <div class="logo">
-
-            <img src="logo.png" alt="" width="290" height="290">
-
+        <div class="logo-box">
+            <img src="logo.png" alt="IRON PULSE LOGO">
         </div>
         <div class="nav-links">
-            <a href="#about">About</a>
             <a href="#machines">Machines</a>
             <a href="#amenities">Amenities</a>
             <a href="#location">Location</a>
@@ -283,43 +320,43 @@
             <div class="machine-card">
                 <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=800" alt="Dumbbells">
                 <div class="machine-info">
-                    <h3>Dumbbell Row</h3>
-                    <p>Custom Steel 5kg-80kg</p>
+                    <h3>Dumbbell Area</h3>
+                    <p>Steel 5kg-80kg</p>
                 </div>
             </div>
             <div class="machine-card">
                 <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800" alt="Cable Cross">
                 <div class="machine-info">
                     <h3>Functional Trainer</h3>
-                    <p>Dual Pulley System</p>
+                    <p>Dual Pulley</p>
                 </div>
             </div>
             <div class="machine-card">
                 <img src="https://images.unsplash.com/photo-1637666062717-1c6bcfa4a4df?q=80&w=800" alt="Bench Press">
                 <div class="machine-info">
                     <h3>Incline Bench</h3>
-                    <p>Precision Engineering</p>
+                    <p>Precision Plate Loaded</p>
                 </div>
             </div>
             <div class="machine-card">
                 <img src="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?q=80&w=800" alt="Lat Pulldown">
                 <div class="machine-info">
                     <h3>Lat Pulldown</h3>
-                    <p>ISO-Lateral Plate Loaded</p>
+                    <p>ISO-Lateral Strength</p>
                 </div>
             </div>
             <div class="machine-card">
                 <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=800" alt="Deadlift">
                 <div class="machine-info">
                     <h3>Deadlift Platform</h3>
-                    <p>Shock-Absorb Flooring</p>
+                    <p>Shock-Absorb</p>
                 </div>
             </div>
             <div class="machine-card">
                 <img src="https://images.unsplash.com/photo-1521804906057-1df8fdb718b7?q=80&w=800" alt="Row">
                 <div class="machine-info">
                     <h3>T-Bar Row</h3>
-                    <p>Brutal Back Gains</p>
+                    <p>Back Specialization</p>
                 </div>
             </div>
         </div>
@@ -330,19 +367,19 @@
         <div class="amenity-list">
             <div class="amenity-item">
                 <h3>Cryo Therapy</h3>
-                <p>Speed up recovery with our state-of-the-art sub-zero chambers.</p>
+                <p>Advanced recovery chambers for elite athletes.</p>
             </div>
             <div class="amenity-item">
                 <h3>Private Coaching</h3>
-                <p>One-on-one sessions with professional IFBB athletes.</p>
+                <p>One-on-one sessions with pro IFBB trainers.</p>
             </div>
             <div class="amenity-item">
                 <h3>Bio-Bar</h3>
-                <p>Nutrition-optimized post-workout meals and shakes.</p>
+                <p>Optimized post-workout nutrition.</p>
             </div>
             <div class="amenity-item">
                 <h3>24/7 Access</h3>
-                <p>Biometric entry system allows you to train whenever you want.</p>
+                <p>Train on your schedule with biometric entry.</p>
             </div>
         </div>
     </section>
@@ -352,7 +389,7 @@
         </h2>
         <div class="map-container">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.01829705146!2d-122.4194!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzI5LjYiTiAxMjLCsDI1JzA5LjgiVw!5e0!3m2!1sen!2sus!4v1634567890123!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093643!2d144.9537353153166!3d-37.816279742021234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce6e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1625100000000!5m2!1sen!2sus"
                 width="100%" height="100%" style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(1.2);"
                 allowfullscreen="" loading="lazy">
             </iframe>
@@ -360,9 +397,9 @@
     </section>
 
     <footer>
-        <div class="logo">IRON<span>PULSE</span></div>
+        <div class="logo-box"><img src="logo.png" alt="IRON PULSE" style="height:40px;"></div>
         <div style="color: var(--text-dim); font-size: 0.8rem;">
-            &copy; 2025 ALL RIGHTS RESERVED. DESIGNED FOR PERFORMANCE.
+            © 2025 IRON PULSE. ENGINEERED FOR PERFORMANCE.
         </div>
     </footer>
 
