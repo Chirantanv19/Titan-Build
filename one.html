@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Scroll Frame Animation (No Movement)</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 400vh;
+            /* controls scroll smoothness */
+            background: #000;
+        }
+
+        .hero {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100vw;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* image stays fixed */
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <img id="anim" src="ezgif-frame-001.png" alt="scroll animation" />
+    </section>
+
+    <script>
+        const img = document.getElementById("anim");
+
+        const animationData = {
+            totalFrames: 29,
+            path: "ezgif-frame-",
+            ext: ".jpg"
+        };
+
+        window.addEventListener("scroll", () => {
+            const scrollTop = window.scrollY;
+            const maxScroll = document.body.scrollHeight - window.innerHeight;
+
+            // scroll progress (0 → 1)
+            const progress = scrollTop / maxScroll;
+
+            // progress → frame number
+            const frameNumber = Math.min(
+                animationData.totalFrames,
+                Math.max(
+                    1,
+                    Math.floor(progress * animationData.totalFrames) + 1
+                )
+            );
+
+            // build filename: ezgif-frame-001.png
+            const paddedFrame = String(frameNumber).padStart(3, "0");
+            img.src = `${animationData.path}${paddedFrame}${animationData.ext}`;
+        });
+    </script>
+
+</body>
+
+</html>
