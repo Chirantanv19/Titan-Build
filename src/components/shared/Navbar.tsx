@@ -27,10 +27,27 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
-            <a key={link.name} href={link.href} className="text-xs uppercase tracking-widest text-zinc-400 hover:text-primary transition-colors">
+            <a
+              key={link.name}
+              href={link.href}
+              className="
+      relative
+      text-xs uppercase tracking-widest
+      text-zinc-400
+      transition-all duration-300 ease-out
+
+      hover:text-white
+      hover:font-semibold
+
+      hover:drop-shadow-[10_10_20px_theme(colors.primary.DEFAULT)]
+      hover:drop-shadow-[0_0_40px_theme(colors.primary.DEFAULT)]
+    "
+            >
               {link.name}
             </a>
           ))}
+
+
           <Button className="py-2 px-6 rounded-full text-[10px]">Enquire</Button>
         </div>
 
