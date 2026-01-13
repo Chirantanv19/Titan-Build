@@ -65,13 +65,26 @@ export default function Hero() {
 
         <motion.h1
           variants={itemVariants}
-          className="text-6xl md:text-9xl font-black italic tracking-tighter text-white leading-[0.85] mb-8"
+          className="text-6xl
+           md:text-9xl font-black italic tracking-tighter leading-[0.85] mb-8"
         >
-          UNLEASH YOUR <br />
-          <span className="text-primary italic text-stroke-gray-10">
+
+          UNLEASH YOUR
+
+          <br />
+          <span
+            className="
+      bg-gradient-to-r
+     from-orange-400 via-orange-500  to-orange-600 group
+      bg-clip-text text-transparent
+      drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)]
+      italic
+    "
+          >
             INNER TITAN
           </span>
         </motion.h1>
+
 
         <motion.p
           variants={itemVariants}
@@ -85,7 +98,8 @@ export default function Hero() {
           variants={itemVariants}
           className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
         >
-          <Button className="group flex items-center justify-center gap-2 px-10">
+          <Button className="bg-gradient-to-r
+      from-orange-400 via-orange-500  to-orange-600 group flex items-center justify-center gap-2 px-10">
             Start Your Journey
             <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Button>
