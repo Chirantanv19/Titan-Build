@@ -68,7 +68,9 @@ export default function Hero() {
           className="text-6xl md:text-9xl font-black italic tracking-tighter text-white leading-[0.85] mb-8"
         >
           UNLEASH YOUR <br />
-          <span className="text-primary italic">INNER TITAN</span>
+          <span className="text-primary italic text-stroke-gray-10">
+            INNER TITAN
+          </span>
         </motion.h1>
 
         <motion.p

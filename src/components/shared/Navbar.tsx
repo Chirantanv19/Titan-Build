@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <nav className={cn(
       "fixed top-7 w-full z-50 transition-all duration-300 px-6 py-2",
-      scrolled ? "bg-background/80 backdrop-blur-md border-b border-white/5" : "bg-transparent"
+      scrolled ? "bg-background/80 bg-blure backdrop-blur-md border-b border-white/5" : "bg-transparent"
     )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between h-16">
         <div className="flex-shrink-0">
