@@ -2,7 +2,7 @@
 
 @theme {
   /* Brand Colors */
-  --color-primary: bg-gradient-to-r from-orange-300 via-orange-400 to-orange-500 group;
+  --color-primary: #e3722b;        /* Volt Lime: The high-energy accent */
   /* Volt Lime: The high-energy accent */
   --color-background: #0A0A0A;
   /* Obsidian: The premium dark base */
