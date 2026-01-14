@@ -75,7 +75,7 @@ export default function Hero() {
           <span
             className="
       bg-gradient-to-r
-     from-orange-400 via-orange-500  to-orange-600 group
+     from-orange-200 via-orange-300  to-orange-400 group
       bg-clip-text text-transparent
       drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)]
       italic
