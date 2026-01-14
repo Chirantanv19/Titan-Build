@@ -12,7 +12,8 @@ export default function Testimonials() {
     <section id="testimonials" className="py-24 bg-background overflow-hidden border-y border-white/5">
       <div className="container px-6 mx-auto mb-16 text-center">
         <h2 className="text-4xl md:text-6xl font-black italic mb-4">
-          TITAN <span className="text-primary">RESULTS</span>
+          TITAN <span className=" bg-gradient-to-r
+     from-orange-300 via-orange-400  to-orange-500 group">RESULTS</span>
         </h2>
       </div>
 

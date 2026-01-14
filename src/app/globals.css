@@ -2,11 +2,15 @@
 
 @theme {
   /* Brand Colors */
-  --color-primary: #e3722b;        /* Volt Lime: The high-energy accent */
-  --color-background: #0A0A0A;    /* Obsidian: The premium dark base */
-  --color-surface: #121212;       /* Slate: Used for cards and sections */
-  --color-border-subtle: #262626; /* Subtle separators */
-  
+  --color-primary: bg-gradient-to-r from-orange-300 via-orange-400 to-orange-500 group;
+  /* Volt Lime: The high-energy accent */
+  --color-background: #0A0A0A;
+  /* Obsidian: The premium dark base */
+  --color-surface: #121212;
+  /* Slate: Used for cards and sections */
+  --color-border-subtle: #262626;
+  /* Subtle separators */
+
   /* Typography */
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
@@ -14,7 +18,7 @@
   /* Custom Spacing & Radii */
   --radius-xl: 0.75rem;
   --radius-2xl: 1rem;
-  
+
   /* Keyframe Animations for Framer-like feel without heavy JS */
   --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
 }
@@ -23,17 +27,27 @@
   body {
     @apply bg-background text-zinc-100 antialiased selection:bg-primary selection:text-black;
   }
-  
+
   /* Premium typography defaults */
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     @apply font-display uppercase tracking-tight;
   }
 }
 
 @keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @utility text-glow {
   text-shadow: 0 0 20px rgba(226, 255, 59, 0.5);
 }

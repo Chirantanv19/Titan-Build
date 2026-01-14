@@ -11,7 +11,8 @@ export default function Trainers() {
       <div className="container px-6 mx-auto">
         <div className="mb-16">
           <h2 className="text-5xl md:text-7xl font-black italic mb-4">
-            ELITE <span className="text-primary">COACHES</span>
+            ELITE <span className=" bg-gradient-to-r
+     from-orange-300 via-orange-400  to-orange-500 group">COACHES</span>
           </h2>
           <p className="text-zinc-500 uppercase tracking-[0.2em] text-sm font-medium">
             Learn from the best to become your best.
@@ -33,7 +34,7 @@ export default function Trainers() {
                 {/* Note: Using a placeholder div here. 
                   In production, use <Image /> with a real source. 
                 */}
-                <div className="w-full h-full bg-zinc-800" /> 
+                <div className="w-full h-full bg-zinc-800" />
               </div>
 
               {/* Gradient Overlay */}
@@ -50,7 +51,7 @@ export default function Trainers() {
                 <p className="text-zinc-400 text-sm mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                   {trainer.specialty}
                 </p>
-                
+
                 {/* Social Micro-links */}
                 <div className="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
                   <Instagram className="w-5 h-5 text-white hover:text-primary cursor-pointer transition-colors" />

@@ -98,8 +98,8 @@ export default function Hero() {
           variants={itemVariants}
           className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
         >
-          <Button className="bg-gradient-to-r
-      from-orange-400 via-orange-500  to-orange-600 group flex items-center justify-center gap-2 px-10">
+          <Button className=" bg-gradient-to-r
+     from-orange-300 via-orange-400  to-orange-500 group group flex items-center justify-center gap-2 px-10">
             Start Your Journey
             <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Button>

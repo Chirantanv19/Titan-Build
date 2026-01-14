@@ -48,7 +48,8 @@ export default function Navbar() {
           ))}
 
 
-          <Button className="py-2   bg-gradient-to-r from-orange-400 via-orange-500  to-orange-600 group px-6 rounded-full text-[10px]">Enquire</Button>
+          <Button className="py-2    bg-gradient-to-r
+     from-orange-300 via-orange-400  to-orange-500 group group px-6 rounded-full text-[10px]">Enquire</Button>
         </div>
 
         {/* Mobile Menu Icon */}
