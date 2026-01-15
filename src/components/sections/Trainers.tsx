@@ -30,12 +30,13 @@ export default function Trainers() {
               className="group relative aspect-[3/4] overflow-hidden rounded-2xl bg-zinc-900"
             >
               {/* Trainer Image - Use object-cover for high-quality framing */}
-              <div className="absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100">
-                {/* Note: Using a placeholder div here. 
-                  In production, use <Image /> with a real source. 
-                */}
-                <div className="w-full h-full bg-zinc-800" />
-              </div>
+              <img
+                src={idx === 0 ? "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=750&fit=crop" :
+                  idx === 1 ? "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop" :
+                    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=750&fit=crop"}
+                alt={trainer.name}
+                className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+              />
 
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />

@@ -16,14 +16,15 @@ export default function FacilityPage() {
   return (
     <main ref={containerRef} className="bg-background">
       {/* 1. ARCHITECTURAL HERO */}
+      {/* Image: Wide-angle shot of the main gym floor with equipment, dramatic lighting */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/60 z-10" />
           <div className="w-full h-full bg-[url('/facility/hero-wide.jpg')] bg-cover bg-center grayscale" />
         </div>
-        
+
         <div className="container relative z-20 px-6 text-center">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="text-[15vw] font-black italic text-white/10 leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none"
@@ -41,15 +42,27 @@ export default function FacilityPage() {
       </section>
 
       {/* 2. EQUIPMENT ZONES (The "Big" Content) */}
+      {/* Zone Images: 
+        - Zone 0: Strength training equipment (barbells, racks, platforms)
+        - Zone 1: Cardio area (treadmills, rowing machines, bikes)
+        - Zone 2: Functional training space (kettlebells, cables, rigs)
+        - Zone 3: Recovery zone (stretching, mobility, rest area)
+      */}
       <section className="py-32 container mx-auto px-6">
         {FACILITY_ZONES.map((zone, idx) => (
           <div key={zone.id} className="mb-40 last:mb-0">
             <div className={`flex flex-col lg:flex-row gap-20 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
-              
+
               {/* IMAGE CONTAINER WITH TEXTURE OVERLAY */}
               <div className="w-full lg:w-3/5 aspect-video relative group overflow-hidden rounded-3xl bg-zinc-900">
                 <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors duration-700 z-10" />
-                <div className={`w-full h-full bg-zinc-800 transition-transform duration-[2s] group-hover:scale-110`} />
+                <img
+                  src={idx === 0 ? "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800&h=450&fit=crop" :
+                    idx === 1 ? "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&h=450&fit=crop" :
+                      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=450&fit=crop"}
+                  alt={zone.title}
+                  className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                />
                 <div className="absolute bottom-6 right-6 z-20">
                   <span className="text-white/20 font-display text-8xl italic select-none">0{idx + 1}</span>
                 </div>
@@ -80,6 +93,7 @@ export default function FacilityPage() {
       </section>
 
       {/* 3. BENTO BRANDING GRID (Final Polish) */}
+      {/* Championship image: Professional athlete or competitive training moment */}
       <section className="pb-32 container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-auto md:h-[600px]">
           <div className="md:col-span-2 bg-zinc-900 rounded-3xl flex flex-col justify-end p-10 relative overflow-hidden group">
@@ -91,7 +105,7 @@ export default function FacilityPage() {
             <p className="font-bold text-xl leading-tight">CERTIFIED BY WORLD FEDERATION OF ATHLETES</p>
           </div>
           <div className="bg-surface rounded-3xl p-10 border border-white/10 flex items-center justify-center">
-             <p className="text-center text-zinc-500 italic">"The equipment is the tool; the discipline is the weapon."</p>
+            <p className="text-center text-zinc-500 italic">"The equipment is the tool; the discipline is the weapon."</p>
           </div>
         </div>
       </section>

@@ -28,12 +28,17 @@ export default function CoachingPage() {
         {TRAINERS.map((trainer, idx) => (
           <ScrollReveal key={trainer.name} width="100%">
             <div className={`flex flex-col lg:flex-row gap-16 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
-              
+
               {/* Trainer Image: High-Grit Portrait */}
               <div className="w-full lg:w-1/2 aspect-[4/5] relative overflow-hidden rounded-3xl group bg-zinc-900">
-                {/* Placeholder for /public/trainers/trainer-name.jpg */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10 opacity-60" />
-                <div className="w-full h-full bg-zinc-800 grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
+                <img
+                  src={idx === 0 ? "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=750&fit=crop" :
+                    idx === 1 ? "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop" :
+                      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=750&fit=crop"}
+                  alt={trainer.name}
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                />
               </div>
 
               {/* Trainer Details */}
@@ -46,7 +51,7 @@ export default function CoachingPage() {
                   {trainer.name}
                 </h2>
                 <p className="text-zinc-400 text-lg leading-relaxed mb-8">
-                  With over 10 years of experience in {trainer.specialty}, {trainer.name.split(' ')[0]} 
+                  With over 10 years of experience in {trainer.specialty}, {trainer.name.split(' ')[0]}
                   has transformed hundreds of athletes using a data-driven approach to human performance.
                 </p>
 
