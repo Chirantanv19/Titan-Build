@@ -37,15 +37,22 @@ export default function Hero() {
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black">
       {/* Background Video + Overlay */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="h-full w-full object-cover opacity-50"
-        >
-          <source src="/hero-video.mp4" type="video/mp4" />
-        </video>
+       <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="metadata"
+  poster="/hero-preview.jpg"
+  className="h-full w-full object-cover opacity-0 transition-opacity duration-700"
+  onCanPlayThrough={(e) => {
+    e.currentTarget.classList.remove("opacity-0");
+    e.currentTarget.classList.add("opacity-50");
+  }}
+>
+  <source src="/hero-video.mp4" type="video/mp4" />
+</video>
+
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
       </div>
 
