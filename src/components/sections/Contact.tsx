@@ -13,7 +13,8 @@ export default function Contact() {
           {/* Left Side: Info */}
           <div>
             <h2 className="text-5xl md:text-7xl font-black italic mb-8 uppercase">
-              Ready to <span className="text-primary">Ascend?</span>
+              Ready to <span className="bg-gradient-to-r
+     from-orange-300 via-orange-400  to-orange-500 group">Ascend?</span>
             </h2>
             <p className="text-zinc-400 mb-12 max-w-md">
               Visit our facility for a tour or drop us a message to start your elite training journey today.
